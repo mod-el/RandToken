@@ -1,0 +1,6 @@
+{
+	"name": "RandToken",
+	"description": "Generating session-stored random tokens",
+	"version": "0.1.0",
+	"dependencies": {}
+}
