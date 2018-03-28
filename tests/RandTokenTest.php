@@ -27,7 +27,7 @@ class RandTokenTest extends TestCase
 		// Retrieves a token with a seed
 		$token = $randToken->getToken('Foo');
 		$this->assertInternalType('string', $token);
-		$this->assertEquals(strlen($token), 10);
+		$this->assertEquals(strlen($token), 20);
 
 		// Retrieves another token with the same seed, should be equal to the previous one
 		$token2 = $randToken->getToken('Foo');
@@ -37,7 +37,7 @@ class RandTokenTest extends TestCase
 		// Retrieves another token with a new seed, should be different than the previous ones
 		$token3 = $randToken->getToken('Bar');
 		$this->assertInternalType('string', $token3);
-		$this->assertEquals(strlen($token3), 10);
+		$this->assertEquals(strlen($token3), 20);
 		$this->assertNotEquals($token, $token3);
 	}
 }
