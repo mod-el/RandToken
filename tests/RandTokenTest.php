@@ -27,7 +27,7 @@ class RandTokenTest extends TestCase
 		// Retrieves a token with an index
 		$token = $randToken->getToken('Foo');
 		$this->assertInternalType('string', $token);
-		$this->assertEquals(strlen($token), 20);
+		$this->assertEquals(strlen($token), 40);
 
 		// Retrieves another token with the same index, should be equal to the previous one
 		$token2 = $randToken->getToken('Foo');
@@ -37,7 +37,13 @@ class RandTokenTest extends TestCase
 		// Retrieves another token with a new index, should be different than the previous ones
 		$token3 = $randToken->getToken('Bar');
 		$this->assertInternalType('string', $token3);
-		$this->assertEquals(strlen($token3), 20);
+		$this->assertEquals(strlen($token3), 40);
 		$this->assertNotEquals($token, $token3);
+
+		// Retrieves another token with a different length, should now be different than the previous ones and matching the new length
+		$token4 = $randToken->getToken('Bar', 10);
+		$this->assertInternalType('string', $token4);
+		$this->assertEquals(strlen($token4), 20);
+		$this->assertNotEquals($token4, $token3);
 	}
 }
