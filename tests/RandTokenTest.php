@@ -2,8 +2,6 @@
 
 use PHPUnit\Framework\TestCase;
 
-define('SESSION_ID', 'test');
-
 require('..' . DIRECTORY_SEPARATOR . 'Core' . DIRECTORY_SEPARATOR . 'Module.php');
 require('RandToken.php');
 
