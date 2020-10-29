@@ -6,6 +6,7 @@ class RandToken extends Module
 {
 	/**
 	 * @param string $idx
+	 * @param int $bytesLength
 	 * @return string
 	 */
 	public function getToken(string $idx, int $bytesLength = 20): string
